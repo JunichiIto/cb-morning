@@ -1,5 +1,5 @@
 CbMorning::Application.routes.draw do
   resources :menu_items
 
-  root 'home#index'
+  root 'menu_items#index'
 end
