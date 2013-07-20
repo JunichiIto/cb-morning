@@ -1,8 +1,11 @@
 %h1 Listing menu_items
 
+%p= link_to 'New Menu item', new_menu_item_path
+
 %table.table.table-bordered
   %tr
-    %th Name
+    %th= lbl MenuItem, :name
+    %th= lbl MenuItem, :category_list
     %th
     %th
     %th
@@ -10,10 +13,7 @@
   - @menu_items.each do |menu_item|
     %tr
       %td= menu_item.name
+      %td= menu_item.category_list
       %td= link_to 'Show', menu_item
       %td= link_to 'Edit', edit_menu_item_path(menu_item)
       %td= link_to 'Destroy', menu_item, :method => :delete, :data => { :confirm => 'Are you sure?' }
-
-%br
-
-= link_to 'New Menu item', new_menu_item_path
