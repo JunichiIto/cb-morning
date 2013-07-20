@@ -1,0 +1,14 @@
+production:
+  app: cb-morning
+  stack: cedar
+  config:
+    BUNDLE_WITHOUT: "development:test"
+
+staging:
+  stack: cedar
+  app: cb-morning-staging
+  config: &default
+    BUNDLE_WITHOUT: "development:test"
+    TZ: "Asia/Tokyo"
+    RAILS_ENV: staging
+    RACK_ENV: staging

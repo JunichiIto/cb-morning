@@ -13,6 +13,15 @@ group :development, :test do
   gem "rspec-rails", ">= 2.0.1"
 end
 
+group :development do
+  gem 'heroku_san'
+  gem 'heroku'
+end
+
+group :production do
+  gem 'rails_12factor'
+end
+
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'jbuilder', '~> 1.2'
@@ -22,3 +31,5 @@ gem "jquery-rails"
 gem 'sass-rails'
 gem 'bootstrap-sass', '~> 2.3.2.1'
 gem "simple_form", "3.0.0.rc"
+gem 'pg'
+gem 'unicorn'
