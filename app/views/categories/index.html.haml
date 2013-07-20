@@ -1,0 +1,7 @@
+%h2 Categories
+
+- @categories.each do |category|
+  %h3= category.name
+  .menu-items.well
+    - MenuItem.tagged_with(category.name, on: :categories).each do |menu_item|
+      %span.menu-item.label.label-warning= menu_item.name
