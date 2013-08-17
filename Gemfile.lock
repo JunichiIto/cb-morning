@@ -48,6 +48,8 @@ GEM
     excon (0.25.1)
     execjs (1.4.0)
       multi_json (~> 1.0)
+    faraday (0.8.8)
+      multipart-post (~> 1.2.0)
     haml (4.0.3)
       tilt
     haml-rails (0.4)
@@ -76,6 +78,10 @@ GEM
       thor (>= 0.14, < 2.0)
     json (1.8.0)
     kgio (2.8.0)
+    koala (1.7.0rc1)
+      addressable
+      faraday
+      multi_json
     launchy (2.3.0)
       addressable (~> 2.3)
     mail (2.5.4)
@@ -84,6 +90,7 @@ GEM
     mime-types (1.23)
     minitest (4.7.5)
     multi_json (1.7.7)
+    multipart-post (1.2.0)
     netrc (0.7.7)
     pg (0.15.1)
     polyglot (0.3.3)
@@ -177,6 +184,7 @@ DEPENDENCIES
   heroku_san
   jbuilder (~> 1.2)
   jquery-rails
+  koala (~> 1.7.0rc1)
   pg
   rails (= 4.0.0)
   rails_12factor

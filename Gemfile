@@ -35,3 +35,4 @@ gem 'pg'
 gem 'unicorn'
 gem 'copy_tuner_client', '~> 0.0.1'
 gem 'acts-as-taggable-on'
+gem "koala", "~> 1.7.0rc1"
