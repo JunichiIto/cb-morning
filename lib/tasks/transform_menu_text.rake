@@ -1,9 +1,9 @@
-desc "Import menu_history_text"
-task :import_history_text, [] => :environment do |t, args|
+desc "Transform menu_history_text"
+task :transform_menu_text, [] => :environment do |t, args|
   category = ""
   category_line = ""
   menu_table = {}
-  File.open("menu_history.txt", "r").each_line do |line|
+  File.open("./menu_text/menu_history.txt", "r").each_line do |line|
     line.strip!
     if line =~ /\[(.+)\]/ or line =~ /◎(.+)/
       category = $1
