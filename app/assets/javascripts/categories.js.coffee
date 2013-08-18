@@ -15,8 +15,6 @@ $ ->
     $this = $(this)
     appendHeader($this.text())
 
-  # resizeColumns = ->
-  #   height = document.height
-  #   $('#categories-main > div').css('height', height)
-  # resizeColumns()
-  # $(window).resize resizeColumns
+  $('#edit-container').on 'click', '#clear-text', ->
+    $textarea = $('#menu-text')
+    $textarea.text("")

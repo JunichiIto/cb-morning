@@ -2,6 +2,7 @@
   .span3#edit-pane
     #edit-container
       = content_tag :textarea, '', id: 'menu-text'
+      %p= link_to 'クリア', '#', id: 'clear-text'
   .span9#categories-pane
     #categories
       - @categories.each do |category|
