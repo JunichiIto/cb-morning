@@ -14,3 +14,9 @@ $ ->
   $('#categories').on 'click', '.category-name', ->
     $this = $(this)
     appendHeader($this.text())
+
+  # resizeColumns = ->
+  #   height = document.height
+  #   $('#categories-main > div').css('height', height)
+  # resizeColumns()
+  # $(window).resize resizeColumns

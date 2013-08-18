@@ -1,12 +1,11 @@
-.row
-  .span9
-    %h2 Categories
-
+.row-fluid#categories-main
+  .span3#edit-pane
+    #edit-container
+      = content_tag :textarea, '', id: 'menu-text'
+  .span9#categories-pane
     #categories
       - @categories.each do |category|
         %h3.category-name= category.name
         .menu-items.well
           - MenuItem.tagged_with(category.name, on: :categories).each do |menu_item|
             %span.menu-item.label.label-warning= menu_item.name
-  .span3
-    = content_tag :textarea, '', id: 'menu-text'
