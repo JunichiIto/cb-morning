@@ -11,7 +11,7 @@
       = javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.1/html5shiv.js"
 
   %body
-    .navbar.navbar-fluid
+    .navbar.navbar-fixed-top
       .navbar-inner
         .container
           = link_to "CB Morning", root_path, class: "brand"
@@ -26,8 +26,8 @@
           = render "layouts/flash"
           = yield
 
-      -# %footer
-      -#   %p
-      -#     &copy;
-      -#     = link_to 'Coupe Baguette', 'http://coupe-baguette.com'
-      -#     2013
+      %footer
+        %p
+          &copy;
+          = link_to 'Coupe Baguette', 'http://coupe-baguette.com'
+          2013
