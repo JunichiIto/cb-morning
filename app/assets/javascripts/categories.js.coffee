@@ -4,8 +4,8 @@ $ ->
 
   appendText = (text)->
     $textarea = $('#menu-text')
-    originalText = $textarea.text()
-    $('#menu-text').text("#{originalText}#{text}\n")
+    originalText = $textarea.val()
+    $('#menu-text').val("#{originalText}#{text}\n")
 
   $('.menu-items').on 'click', '.menu-item', ->
     $this = $(this)
