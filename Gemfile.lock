@@ -27,6 +27,8 @@ GEM
       tzinfo (~> 0.3.37)
     acts-as-taggable-on (2.4.1)
       rails (>= 3, < 5)
+    acts_as_list (0.3.0)
+      activerecord (>= 3.0)
     addressable (2.3.5)
     arel (4.0.0)
     atomic (1.1.10)
@@ -175,6 +177,7 @@ PLATFORMS
 
 DEPENDENCIES
   acts-as-taggable-on
+  acts_as_list
   bootstrap-sass (~> 2.3.2.1)
   coffee-rails (~> 4.0.0)
   copy_tuner_client (~> 0.0.1)

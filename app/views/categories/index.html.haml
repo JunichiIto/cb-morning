@@ -1,3 +1,4 @@
+%p= link_to 'New Category', new_category_path
 .row-fluid#categories-main
   .span3#edit-pane
     #edit-container
@@ -7,6 +8,6 @@
     #categories
       - @categories.each do |category|
         %h3.category-name= category.name
-        .menu-items.well
-          - MenuItem.tagged_with(category.name, on: :categories).each do |menu_item|
-            %span.menu-item.label.label-warning= menu_item.name
+        -# .menu-items.well
+        -#   - MenuItem.tagged_with(category.name, on: :categories).each do |menu_item|
+        -#     %span.menu-item.label.label-warning= menu_item.name
