@@ -5,7 +5,7 @@
 %table.table.table-bordered
   %tr
     %th= lbl MenuItem, :name
-    %th= lbl MenuItem, :category_list
+    %th Category
     %th
     %th
     %th
@@ -13,7 +13,7 @@
   - @menu_items.each do |menu_item|
     %tr
       %td= menu_item.name
-      %td= menu_item.category_list
+      %td= menu_item.category.try(:name)
       %td= link_to 'Show', menu_item
       %td= link_to 'Edit', edit_menu_item_path(menu_item)
       %td= link_to 'Destroy', menu_item, :method => :delete, :data => { :confirm => 'Are you sure?' }

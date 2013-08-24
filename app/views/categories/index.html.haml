@@ -8,6 +8,6 @@
     #categories
       - @categories.each do |category|
         %h3.category-name= category.name
-        -# .menu-items.well
-        -#   - MenuItem.tagged_with(category.name, on: :categories).each do |menu_item|
-        -#     %span.menu-item.label.label-warning= menu_item.name
+        .menu-items.well
+          - category.menu_items.each do |menu_item|
+            %span.menu-item.label.label-warning= menu_item.name
