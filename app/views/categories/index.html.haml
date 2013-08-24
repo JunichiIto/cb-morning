@@ -20,10 +20,16 @@
                 - category.menu_items.each do |menu_item|
                   %span.menu-item.label.label-warning= menu_item.name
         #tab2.tab-pane
-          - @keywords = MenuItem.tag_counts_on(:keywords)
+          %h3 キーワード
+          - keywords = MenuItem.tag_counts_on(:keywords)
+          .well#tag-cloud
+            - keywords.each do |keyword|
+              = link_to keyword.name, "##{keyword.name}", class: "label label-warning"
           #keywords
-            - @keywords.each do |category|
-              %h3.category-name= category.name
+            - keywords.each do |keyword|
+              %h3
+                = content_tag :a, keyword.name, name: keyword.name
               .menu-items.well
-                - MenuItem.tagged_with(category.name, on: :keywords).each do |menu_item|
+                - MenuItem.tagged_with(keyword.name, on: :keywords).each do |menu_item|
                   %span.menu-item.label.label-warning= menu_item.name
+                = link_to 'トップに戻る', '#', class: "label label-info"
