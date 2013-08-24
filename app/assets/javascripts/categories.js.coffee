@@ -18,3 +18,6 @@ $ ->
   $('#edit-container').on 'click', '#clear-text', ->
     $textarea = $('#menu-text')
     $textarea.text("")
+
+  $("#q_category_id_eq").on 'change', ->
+    $(this).closest('form').submit()

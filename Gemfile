@@ -40,3 +40,4 @@ gem "koala", "~> 1.7.0rc1"
 gem 'acts_as_list'
 gem 'yahoo-japanese-analysis'
 gem 'mojinizer', require: 'mojinizer'
+gem 'ransack'

@@ -4,7 +4,8 @@ class MenuItemsController < ApplicationController
   # GET /menu_items
   # GET /menu_items.json
   def index
-    @menu_items = MenuItem.joins(:category).order("categories.position, menu_items.id").all
+    @q = MenuItem.joins(:category).order("categories.position, menu_items.id").search(params[:q])
+    @menu_items = @q.result
   end
 
   # GET /menu_items/1
