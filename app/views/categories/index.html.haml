@@ -20,7 +20,6 @@
                 - category.menu_items.each do |menu_item|
                   %span.menu-item.label.label-warning= menu_item.name
         #tab2.tab-pane
-          -# TODO Refactoring
           - @keywords = MenuItem.tag_counts_on(:keywords)
           #keywords
             - @keywords.each do |category|
