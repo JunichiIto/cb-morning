@@ -92,6 +92,9 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.23)
     minitest (4.7.5)
+    moji (1.6)
+    mojinizer (0.2.2)
+      moji (~> 1.6)
     multi_json (1.7.7)
     multipart-post (1.2.0)
     netrc (0.7.7)
@@ -191,6 +194,7 @@ DEPENDENCIES
   jbuilder (~> 1.2)
   jquery-rails
   koala (~> 1.7.0rc1)
+  mojinizer
   pg
   rails (= 4.0.0)
   rails_12factor

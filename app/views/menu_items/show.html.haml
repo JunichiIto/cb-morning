@@ -4,6 +4,9 @@
   %b= "#{lbl @menu_item, :name}:"
   = @menu_item.name
 %p
+  %b Category
+  = @menu_item.category.name
+%p
   %b= "#{lbl @menu_item, :keyword_list}:"
   = @menu_item.keyword_list
 

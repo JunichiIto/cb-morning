@@ -17,16 +17,17 @@
             - @categories.each do |category|
               %h3.category-name= category.name
               .menu-items.well
-                - category.menu_items.each do |menu_item|
+                - category.menu_items.sort{|a, b| a.name.hiragana <=> b.name.hiragana}.each do |menu_item|
                   %span.menu-item.label.label-warning= menu_item.name
         #tab2.tab-pane
           %h3 キーワード
           - keywords = MenuItem.tag_counts_on(:keywords)
+          - sorted_keywords = keywords.sort{|a, b| a.name.hiragana <=> b.name.hiragana}
           .well#tag-cloud
-            - keywords.each do |keyword|
-              = link_to keyword.name, "##{keyword.name}", class: "label label-warning"
+            - tag_cloud(sorted_keywords, %w(tag1 tag2 tag3 tag4)) do |keyword, css_class|
+              = link_to keyword.name, "##{keyword.name}", class: "label label-warning #{css_class}"
           #keywords
-            - keywords.each do |keyword|
+            - sorted_keywords.each do |keyword|
               %h3
                 = content_tag :a, keyword.name, name: keyword.name
               .menu-items.well
