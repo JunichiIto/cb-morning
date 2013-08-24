@@ -5,9 +5,26 @@
       = content_tag :textarea, '', id: 'menu-text'
       %p= link_to 'クリア', '#', id: 'clear-text'
   .span9#categories-pane
-    #categories
-      - @categories.each do |category|
-        %h3.category-name= category.name
-        .menu-items.well
-          - category.menu_items.each do |menu_item|
-            %span.menu-item.label.label-warning= menu_item.name
+    .tabbable
+      %ul.nav.nav-tabs
+        %li.active
+          %a{"data-toggle" => "tab", :href => "#tab1"} Category
+        %li
+          %a{"data-toggle" => "tab", :href => "#tab2"} Keyword
+      #my-tab-content.tab-content
+        #tab1.tab-pane.active
+          #categories
+            - @categories.each do |category|
+              %h3.category-name= category.name
+              .menu-items.well
+                - category.menu_items.each do |menu_item|
+                  %span.menu-item.label.label-warning= menu_item.name
+        #tab2.tab-pane
+          -# TODO Refactoring
+          - @keywords = MenuItem.tag_counts_on(:keywords)
+          #keywords
+            - @keywords.each do |category|
+              %h3.category-name= category.name
+              .menu-items.well
+                - MenuItem.tagged_with(category.name, on: :keywords).each do |menu_item|
+                  %span.menu-item.label.label-warning= menu_item.name
