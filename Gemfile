@@ -16,6 +16,7 @@ end
 group :development do
   gem 'heroku_san'
   gem 'heroku'
+  gem 'awesome_print'
 end
 
 group :production do
@@ -37,3 +38,4 @@ gem 'copy_tuner_client', '~> 0.0.1'
 gem 'acts-as-taggable-on'
 gem "koala", "~> 1.7.0rc1"
 gem 'acts_as_list'
+gem 'yahoo-japanese-analysis'
