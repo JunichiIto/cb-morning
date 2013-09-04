@@ -49,8 +49,8 @@ CbMorning::Application.configure do
   # config.log_tags = [ :subdomain, :uuid ]
 
   # Use a different logger for distributed setups.
-  config.logger = ActiveSupport::TaggedLogging.new(Logger.new(STDOUT))
-  config.logger.level = Logger.const_get(ENV['LOG_LEVEL'] ? ENV['LOG_LEVEL'].upcase : 'INFO')
+  # config.logger = ActiveSupport::TaggedLogging.new(Logger.new(STDOUT))
+  # config.logger.level = Logger.const_get(ENV['LOG_LEVEL'] ? ENV['LOG_LEVEL'].upcase : 'INFO')
 
   # Use a different cache store in production.
   # config.cache_store = :mem_cache_store
