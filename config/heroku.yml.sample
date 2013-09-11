@@ -1,12 +1,12 @@
 production:
-  app: cb-morning
+  app: your-app
   stack: cedar
   config:
     BUNDLE_WITHOUT: "development:test"
 
 staging:
   stack: cedar
-  app: cb-morning-staging
+  app: your-app-staging
   config: &default
     BUNDLE_WITHOUT: "development:test"
     TZ: "Asia/Tokyo"
