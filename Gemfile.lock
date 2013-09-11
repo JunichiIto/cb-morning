@@ -98,6 +98,7 @@ GEM
     multi_json (1.7.7)
     multipart-post (1.2.0)
     netrc (0.7.7)
+    newrelic_rpm (3.6.7.152)
     pg (0.15.1)
     polyamorous (0.6.3)
       activerecord (>= 3.0)
@@ -201,6 +202,7 @@ DEPENDENCIES
   jquery-rails
   koala (~> 1.7.0rc1)
   mojinizer
+  newrelic_rpm
   pg
   rails (= 4.0.0)
   rails_12factor
