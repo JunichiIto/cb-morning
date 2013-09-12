@@ -1,6 +1,6 @@
 $ ->
   appendHeader = (header)->
-    appendText("\n◎#{header}")
+    appendText("\n#{header}")
 
   appendText = (text)->
     $textarea = $('#menu-text')

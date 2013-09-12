@@ -15,9 +15,10 @@
         #tab1.tab-pane.active
           #categories
             - @categories.each do |category|
+              %small= link_to 'edit', edit_category_path(category)
               %h3.category-name= category.name
               .menu-items.well
-                - if category.name == '菓子パン'
+                - if category.name == '◎菓子パン'
                   Click keyword tab.
                 - else
                   - category.menu_items.sort{|a, b| a.name.hiragana <=> b.name.hiragana}.each do |menu_item|
