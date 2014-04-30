@@ -19,6 +19,10 @@ group :development do
   gem 'awesome_print'
 end
 
+group :test do
+  gem "capybara"
+end
+
 group :production do
   gem 'rails_12factor'
 end
