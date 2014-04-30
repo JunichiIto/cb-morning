@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
   def authenticate_if_required
     if basic_auth_required?
       authenticate_or_request_with_http_basic 'Production' do |name, password|
-        name == ENV["AUTH_PASS"] && password == ENV["AUTH_PASS"]
+        name == ENV["AUTH_NAME"] && password == ENV["AUTH_PASS"]
       end
     end
   end
