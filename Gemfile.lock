@@ -48,9 +48,6 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.6.3)
-    copy_tuner_client (0.0.12)
-      i18n (>= 0.5.0)
-      json
     diff-lcs (1.2.5)
     erubis (2.7.0)
     excon (0.25.1)
@@ -209,7 +206,6 @@ DEPENDENCIES
   bootstrap-sass (~> 2.3.2.1)
   capybara
   coffee-rails (~> 4.0.0)
-  copy_tuner_client (~> 0.0.1)
   haml (>= 3.0.0)
   haml-rails
   heroku

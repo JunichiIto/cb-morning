@@ -39,7 +39,6 @@ gem 'bootstrap-sass', '~> 2.3.2.1'
 gem "simple_form", '~> 3.0.2'
 gem 'pg'
 gem 'unicorn'
-gem 'copy_tuner_client', '~> 0.0.1'
 gem 'acts-as-taggable-on'
 gem "koala", "~> 1.7.0rc1"
 gem 'acts_as_list'

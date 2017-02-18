@@ -1,0 +1,1068 @@
+---
+cs:
+  activerecord:
+    errors:
+      messages:
+        record_invalid: 'Validation failed: %{errors}'
+        restrict_dependent_destroy:
+          many: Cannot delete record because dependent %{record} exist
+          one: Cannot delete record because a dependent %{record} exists
+  date:
+    formats:
+      default: "%Y-%m-%d"
+      long: "%B %d, %Y"
+      short: "%b %d"
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: about 1 hour
+        other: about %{count} hours
+      about_x_months:
+        one: about 1 month
+        other: about %{count} months
+      about_x_years:
+        one: about 1 year
+        other: about %{count} years
+      almost_x_years:
+        one: almost 1 year
+        other: almost %{count} years
+      half_a_minute: half a minute
+      less_than_x_minutes:
+        one: less than a minute
+        other: less than %{count} minutes
+      less_than_x_seconds:
+        one: less than 1 second
+        other: less than %{count} seconds
+      over_x_years:
+        one: over 1 year
+        other: over %{count} years
+      x_days:
+        one: 1 day
+        other: "%{count} days"
+      x_minutes:
+        one: 1 minute
+        other: "%{count} minutes"
+      x_months:
+        one: 1 month
+        other: "%{count} months"
+      x_seconds:
+        one: 1 second
+        other: "%{count} seconds"
+    prompts:
+      day: Day
+      hour: Hour
+      minute: Minute
+      month: Month
+      second: Seconds
+      year: Year
+  errors:
+    format: "%{attribute} %{message}"
+    messages:
+      accepted: must be accepted
+      blank: can't be blank
+      confirmation: doesn't match %{attribute}
+      empty: can't be empty
+      equal_to: must be equal to %{count}
+      even: must be even
+      exclusion: is reserved
+      greater_than: must be greater than %{count}
+      greater_than_or_equal_to: must be greater than or equal to %{count}
+      inclusion: is not included in the list
+      invalid: is invalid
+      less_than: must be less than %{count}
+      less_than_or_equal_to: must be less than or equal to %{count}
+      not_a_number: is not a number
+      not_an_integer: must be an integer
+      odd: must be odd
+      other_than: must be other than %{count}
+      present: must be blank
+      taken: has already been taken
+      too_long: is too long (maximum is %{count} characters)
+      too_short: is too short (minimum is %{count} characters)
+      wrong_length: is the wrong length (should be %{count} characters)
+  hello: Hello world
+  helpers:
+    select:
+      prompt: Please select
+    submit:
+      create: Create %{model}
+      submit: Save %{model}
+      update: Update %{model}
+  number:
+    currency:
+      format:
+        delimiter: ","
+        format: "%u%n"
+        separator: "."
+        unit: "$"
+    format:
+      delimiter: ","
+      separator: "."
+    human:
+      decimal_units:
+        format: "%n %u"
+        units:
+          billion: Billion
+          million: Million
+          quadrillion: Quadrillion
+          thousand: Thousand
+          trillion: Trillion
+      storage_units:
+        format: "%n %u"
+        units:
+          byte:
+            one: Byte
+            other: Bytes
+          gb: GB
+          kb: KB
+          mb: MB
+          tb: TB
+    percentage:
+      format:
+        format: "%n%"
+  ransack:
+    all: každou
+    and: a
+    any: kteroukoliv
+    asc: vzestupné
+    attribute: atribut
+    combinator: kombinátor
+    condition: podmínka
+    desc: sestupné
+    or: nebo
+    predicate: predikát
+    predicates:
+      blank: je prázdné
+      cont: obsahuje
+      cont_all: obsahuje všechny
+      cont_any: obsahuje kterékoliv
+      does_not_match: neodpovídá
+      does_not_match_all: neodpovídá všem
+      does_not_match_any: neodpovídá kterékoliv
+      end: končí s
+      end_all: končí se všemi
+      end_any: končí s kteroukoliv
+      eq: rovno
+      eq_all: rovno všem
+      eq_any: rovno kterékoliv
+      'false': není pravdivé
+      gt: větší než
+      gt_all: větší než všechny
+      gt_any: větší než kterákoliv
+      gteq: větší nebo rovno než
+      gteq_all: větší nebo rovno než všechny
+      gteq_any: větší nebo rovno než kterákoliv
+      in: v
+      in_all: ve všech
+      in_any: v kterékoliv
+      lt: menší než
+      lt_all: menší než všechny
+      lt_any: menší než kterákoliv
+      lteq: menší nebo rovno než
+      lteq_all: menší nebo rovno než všechny
+      lteq_any: menší nebo rovno než kterákoliv
+      matches: odpovídá
+      matches_all: odpovídá všem
+      matches_any: odpovídá kterékoliv
+      not_cont: neobsahuje
+      not_cont_all: neobsahuje všechny
+      not_cont_any: neobsahuje kteroukoliv
+      not_end: nekončí s
+      not_end_all: nekončí se všemi
+      not_end_any: nekončí s kteroukoliv
+      not_eq: nerovno
+      not_eq_all: nerovno všem
+      not_eq_any: nerovno kterékoliv
+      not_in: není v
+      not_in_all: není ve všech
+      not_in_any: není v kterékoliv
+      not_null: není null
+      not_start: nezačíná s
+      not_start_all: nezačíná se všemi
+      not_start_any: nezačíná s kteroukoliv
+      'null': je null
+      present: je vyplněné
+      start: začíná s
+      start_all: začíná se všemi
+      start_any: začíná s kteroukoliv
+      'true': je pravdivé
+    search: vyhledávání
+    sort: řazení
+    value: hodnota
+  simple_form:
+    error_notification:
+      default_message: 'Please review the problems below:'
+    'no': 'No'
+    required:
+      mark: "*"
+      text: required
+    'yes': 'Yes'
+  support:
+    array:
+      last_word_connector: ", and "
+      two_words_connector: " and "
+      words_connector: ", "
+  time:
+    am: am
+    formats:
+      default: "%a, %d %b %Y %H:%M:%S %z"
+      long: "%B %d, %Y %H:%M"
+      short: "%d %b %H:%M"
+    pm: pm
+en:
+  activerecord:
+    errors:
+      messages:
+        record_invalid: 'Validation failed: %{errors}'
+        restrict_dependent_destroy:
+          many: Cannot delete record because dependent %{record} exist
+          one: Cannot delete record because a dependent %{record} exists
+  date:
+    formats:
+      default: "%Y-%m-%d"
+      long: "%B %d, %Y"
+      short: "%b %d"
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: about 1 hour
+        other: about %{count} hours
+      about_x_months:
+        one: about 1 month
+        other: about %{count} months
+      about_x_years:
+        one: about 1 year
+        other: about %{count} years
+      almost_x_years:
+        one: almost 1 year
+        other: almost %{count} years
+      half_a_minute: half a minute
+      less_than_x_minutes:
+        one: less than a minute
+        other: less than %{count} minutes
+      less_than_x_seconds:
+        one: less than 1 second
+        other: less than %{count} seconds
+      over_x_years:
+        one: over 1 year
+        other: over %{count} years
+      x_days:
+        one: 1 day
+        other: "%{count} days"
+      x_minutes:
+        one: 1 minute
+        other: "%{count} minutes"
+      x_months:
+        one: 1 month
+        other: "%{count} months"
+      x_seconds:
+        one: 1 second
+        other: "%{count} seconds"
+    prompts:
+      day: Day
+      hour: Hour
+      minute: Minute
+      month: Month
+      second: Seconds
+      year: Year
+  errors:
+    format: "%{attribute} %{message}"
+    messages:
+      accepted: must be accepted
+      blank: can't be blank
+      confirmation: doesn't match %{attribute}
+      empty: can't be empty
+      equal_to: must be equal to %{count}
+      even: must be even
+      exclusion: is reserved
+      greater_than: must be greater than %{count}
+      greater_than_or_equal_to: must be greater than or equal to %{count}
+      inclusion: is not included in the list
+      invalid: is invalid
+      less_than: must be less than %{count}
+      less_than_or_equal_to: must be less than or equal to %{count}
+      not_a_number: is not a number
+      not_an_integer: must be an integer
+      odd: must be odd
+      other_than: must be other than %{count}
+      present: must be blank
+      taken: has already been taken
+      too_long: is too long (maximum is %{count} characters)
+      too_short: is too short (minimum is %{count} characters)
+      wrong_length: is the wrong length (should be %{count} characters)
+  hello: Hello world
+  helpers:
+    select:
+      prompt: Please select
+    submit:
+      create: Create %{model}
+      submit: Save %{model}
+      update: Update %{model}
+  number:
+    currency:
+      format:
+        delimiter: ","
+        format: "%u%n"
+        separator: "."
+        unit: "$"
+    format:
+      delimiter: ","
+      separator: "."
+    human:
+      decimal_units:
+        format: "%n %u"
+        units:
+          billion: Billion
+          million: Million
+          quadrillion: Quadrillion
+          thousand: Thousand
+          trillion: Trillion
+      storage_units:
+        format: "%n %u"
+        units:
+          byte:
+            one: Byte
+            other: Bytes
+          gb: GB
+          kb: KB
+          mb: MB
+          tb: TB
+    percentage:
+      format:
+        format: "%n%"
+  ransack:
+    all: all
+    and: and
+    any: any
+    asc: ascending
+    attribute: attribute
+    combinator: combinator
+    condition: condition
+    desc: descending
+    or: or
+    predicate: predicate
+    predicates:
+      blank: is blank
+      cont: contains
+      cont_all: contains all
+      cont_any: contains any
+      does_not_match: doesn't match
+      does_not_match_all: doesn't match all
+      does_not_match_any: doesn't match any
+      end: ends with
+      end_all: ends with all
+      end_any: ends with any
+      eq: equals
+      eq_all: equals all
+      eq_any: equals any
+      'false': is false
+      gt: greater than
+      gt_all: greater than all
+      gt_any: greater than any
+      gteq: greater than or equal to
+      gteq_all: greater than or equal to all
+      gteq_any: greater than or equal to any
+      in: in
+      in_all: in all
+      in_any: in any
+      lt: less than
+      lt_all: less than all
+      lt_any: less than any
+      lteq: less than or equal to
+      lteq_all: less than or equal to all
+      lteq_any: less than or equal to any
+      matches: matches
+      matches_all: matches all
+      matches_any: matches any
+      not_cont: doesn't contain
+      not_cont_all: doesn't contain all
+      not_cont_any: doesn't contain any
+      not_end: doesn't end with
+      not_end_all: doesn't end with all
+      not_end_any: doesn't end with any
+      not_eq: not equal to
+      not_eq_all: not equal to all
+      not_eq_any: not equal to any
+      not_in: not in
+      not_in_all: not in all
+      not_in_any: not in any
+      not_null: is not null
+      not_start: doesn't start with
+      not_start_all: doesn't start with all
+      not_start_any: doesn't start with any
+      'null': is null
+      present: is present
+      start: starts with
+      start_all: starts with all
+      start_any: starts with any
+      'true': is true
+    search: search
+    sort: sort
+    value: value
+  simple_form:
+    error_notification:
+      default_message: 'Please review the problems below:'
+    'no': 'No'
+    required:
+      mark: "*"
+      text: required
+    'yes': 'Yes'
+  support:
+    array:
+      last_word_connector: ", and "
+      two_words_connector: " and "
+      words_connector: ", "
+  time:
+    am: am
+    formats:
+      default: "%a, %d %b %Y %H:%M:%S %z"
+      long: "%B %d, %Y %H:%M"
+      short: "%d %b %H:%M"
+    pm: pm
+es:
+  activerecord:
+    errors:
+      messages:
+        record_invalid: 'Validation failed: %{errors}'
+        restrict_dependent_destroy:
+          many: Cannot delete record because dependent %{record} exist
+          one: Cannot delete record because a dependent %{record} exists
+  date:
+    formats:
+      default: "%Y-%m-%d"
+      long: "%B %d, %Y"
+      short: "%b %d"
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: about 1 hour
+        other: about %{count} hours
+      about_x_months:
+        one: about 1 month
+        other: about %{count} months
+      about_x_years:
+        one: about 1 year
+        other: about %{count} years
+      almost_x_years:
+        one: almost 1 year
+        other: almost %{count} years
+      half_a_minute: half a minute
+      less_than_x_minutes:
+        one: less than a minute
+        other: less than %{count} minutes
+      less_than_x_seconds:
+        one: less than 1 second
+        other: less than %{count} seconds
+      over_x_years:
+        one: over 1 year
+        other: over %{count} years
+      x_days:
+        one: 1 day
+        other: "%{count} days"
+      x_minutes:
+        one: 1 minute
+        other: "%{count} minutes"
+      x_months:
+        one: 1 month
+        other: "%{count} months"
+      x_seconds:
+        one: 1 second
+        other: "%{count} seconds"
+    prompts:
+      day: Day
+      hour: Hour
+      minute: Minute
+      month: Month
+      second: Seconds
+      year: Year
+  errors:
+    format: "%{attribute} %{message}"
+    messages:
+      accepted: must be accepted
+      blank: can't be blank
+      confirmation: doesn't match %{attribute}
+      empty: can't be empty
+      equal_to: must be equal to %{count}
+      even: must be even
+      exclusion: is reserved
+      greater_than: must be greater than %{count}
+      greater_than_or_equal_to: must be greater than or equal to %{count}
+      inclusion: is not included in the list
+      invalid: is invalid
+      less_than: must be less than %{count}
+      less_than_or_equal_to: must be less than or equal to %{count}
+      not_a_number: is not a number
+      not_an_integer: must be an integer
+      odd: must be odd
+      other_than: must be other than %{count}
+      present: must be blank
+      taken: has already been taken
+      too_long: is too long (maximum is %{count} characters)
+      too_short: is too short (minimum is %{count} characters)
+      wrong_length: is the wrong length (should be %{count} characters)
+  hello: Hello world
+  helpers:
+    select:
+      prompt: Please select
+    submit:
+      create: Create %{model}
+      submit: Save %{model}
+      update: Update %{model}
+  number:
+    currency:
+      format:
+        delimiter: ","
+        format: "%u%n"
+        separator: "."
+        unit: "$"
+    format:
+      delimiter: ","
+      separator: "."
+    human:
+      decimal_units:
+        format: "%n %u"
+        units:
+          billion: Billion
+          million: Million
+          quadrillion: Quadrillion
+          thousand: Thousand
+          trillion: Trillion
+      storage_units:
+        format: "%n %u"
+        units:
+          byte:
+            one: Byte
+            other: Bytes
+          gb: GB
+          kb: KB
+          mb: MB
+          tb: TB
+    percentage:
+      format:
+        format: "%n%"
+  ransack:
+    all: todos
+    and: y
+    any: cualquier
+    asc: ascendente
+    attribute: atributo
+    combinator: combinado
+    condition: condición
+    desc: descendente
+    or: o
+    predicate: predicado
+    predicates:
+      blank: está en blanco
+      cont: contiene
+      cont_all: contiene todos
+      cont_any: contiene cualquier
+      does_not_match: no coincide
+      does_not_match_all: no coincide con todos
+      does_not_match_any: no coincide con ninguna
+      end: termina con
+      end_all: termina con todo
+      end_any: termina con cualquier
+      eq: es igual a
+      eq_all: es igual a todos
+      eq_any: es igual a cualquier
+      'false': es falso
+      gt: mayor que
+      gt_all: mayor que todos
+      gt_any: mayor que cualquier
+      gteq: mayor que o igual a
+      gteq_all: mayor que o igual a todos
+      gteq_any: mayor que o igual a cualquier
+      in: en
+      in_all: en todos
+      in_any: en cualquier
+      lt: menor que
+      lt_all: menor o igual a
+      lt_any: menor que cualquier
+      lteq: menor que o igual a
+      lteq_all: menor o igual a todos
+      lteq_any: menor o igual a cualquier
+      matches: coincidir
+      matches_all: coincidir a todos
+      matches_any: coincidir a cualquier
+      not_cont: no contiene
+      not_cont_all: no contiene toda
+      not_cont_any: no contiene ninguna
+      not_end: no termina con
+      not_end_all: no termina con todo
+      not_end_any: no termina con cualquier
+      not_eq: no es igual a
+      not_eq_all: no es iguala todos
+      not_eq_any: no es igual a cualquier
+      not_in: no en
+      not_in_all: no en todos
+      not_in_any: no en cualquier
+      not_null: no es nula
+      not_start: no inicia con
+      not_start_all: no inicia con toda
+      not_start_any: no comienza con cualquier
+      'null': es nula
+      present: es presente
+      start: comienza con
+      start_all: comienza con toda
+      start_any: comienza con cualquier
+      'true': es verdadero
+    search: buscar
+    sort: ordernar
+    value: valor
+  simple_form:
+    error_notification:
+      default_message: 'Please review the problems below:'
+    'no': 'No'
+    required:
+      mark: "*"
+      text: required
+    'yes': 'Yes'
+  support:
+    array:
+      last_word_connector: ", and "
+      two_words_connector: " and "
+      words_connector: ", "
+  time:
+    am: am
+    formats:
+      default: "%a, %d %b %Y %H:%M:%S %z"
+      long: "%B %d, %Y %H:%M"
+      short: "%d %b %H:%M"
+    pm: pm
+fr:
+  activerecord:
+    errors:
+      messages:
+        record_invalid: 'Validation failed: %{errors}'
+        restrict_dependent_destroy:
+          many: Cannot delete record because dependent %{record} exist
+          one: Cannot delete record because a dependent %{record} exists
+  date:
+    formats:
+      default: "%Y-%m-%d"
+      long: "%B %d, %Y"
+      short: "%b %d"
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: about 1 hour
+        other: about %{count} hours
+      about_x_months:
+        one: about 1 month
+        other: about %{count} months
+      about_x_years:
+        one: about 1 year
+        other: about %{count} years
+      almost_x_years:
+        one: almost 1 year
+        other: almost %{count} years
+      half_a_minute: half a minute
+      less_than_x_minutes:
+        one: less than a minute
+        other: less than %{count} minutes
+      less_than_x_seconds:
+        one: less than 1 second
+        other: less than %{count} seconds
+      over_x_years:
+        one: over 1 year
+        other: over %{count} years
+      x_days:
+        one: 1 day
+        other: "%{count} days"
+      x_minutes:
+        one: 1 minute
+        other: "%{count} minutes"
+      x_months:
+        one: 1 month
+        other: "%{count} months"
+      x_seconds:
+        one: 1 second
+        other: "%{count} seconds"
+    prompts:
+      day: Day
+      hour: Hour
+      minute: Minute
+      month: Month
+      second: Seconds
+      year: Year
+  errors:
+    format: "%{attribute} %{message}"
+    messages:
+      accepted: must be accepted
+      blank: can't be blank
+      confirmation: doesn't match %{attribute}
+      empty: can't be empty
+      equal_to: must be equal to %{count}
+      even: must be even
+      exclusion: is reserved
+      greater_than: must be greater than %{count}
+      greater_than_or_equal_to: must be greater than or equal to %{count}
+      inclusion: is not included in the list
+      invalid: is invalid
+      less_than: must be less than %{count}
+      less_than_or_equal_to: must be less than or equal to %{count}
+      not_a_number: is not a number
+      not_an_integer: must be an integer
+      odd: must be odd
+      other_than: must be other than %{count}
+      present: must be blank
+      taken: has already been taken
+      too_long: is too long (maximum is %{count} characters)
+      too_short: is too short (minimum is %{count} characters)
+      wrong_length: is the wrong length (should be %{count} characters)
+  hello: Hello world
+  helpers:
+    select:
+      prompt: Please select
+    submit:
+      create: Create %{model}
+      submit: Save %{model}
+      update: Update %{model}
+  number:
+    currency:
+      format:
+        delimiter: ","
+        format: "%u%n"
+        separator: "."
+        unit: "$"
+    format:
+      delimiter: ","
+      separator: "."
+    human:
+      decimal_units:
+        format: "%n %u"
+        units:
+          billion: Billion
+          million: Million
+          quadrillion: Quadrillion
+          thousand: Thousand
+          trillion: Trillion
+      storage_units:
+        format: "%n %u"
+        units:
+          byte:
+            one: Byte
+            other: Bytes
+          gb: GB
+          kb: KB
+          mb: MB
+          tb: TB
+    percentage:
+      format:
+        format: "%n%"
+  ransack:
+    all: tous
+    and: et
+    any: au moins un
+    asc: ascendant
+    attribute: attribut
+    combinator: combinateur
+    condition: condition
+    desc: descendant
+    or: ou
+    predicate: prédicat
+    predicates:
+      blank: est blanc
+      cont: contient
+      cont_all: contient tous
+      cont_any: contient au moins un
+      does_not_match: ne correspond pas à
+      does_not_match_all: ne correspond à aucun
+      does_not_match_any: ne correspond pas à au moins un
+      end: finit par
+      end_all: finit par tous
+      end_any: finit par au moins un
+      eq: égal à
+      eq_all: égal à tous
+      eq_any: égal à au moins un
+      'false': est faux
+      gt: supérieur à
+      gt_all: supérieur à tous
+      gt_any: supérieur à au moins un
+      gteq: supérieur ou égal à
+      gteq_all: supérieur ou égal à tous
+      gteq_any: supérieur ou égal à au moins un
+      in: inclus dans
+      in_all: inclus dans tous
+      in_any: inclus dans au moins un
+      lt: inférieur à
+      lt_all: inférieur à tous
+      lt_any: inférieur à au moins un
+      lteq: inférieur ou égal à
+      lteq_all: inférieur ou égal à tous
+      lteq_any: inférieur ou égal à au moins un
+      matches: correspond à
+      matches_all: correspond à tous
+      matches_any: correspond à au moins un
+      not_cont: ne contient pas
+      not_cont_all: ne contient pas tous
+      not_cont_any: ne contient pas au moins un
+      not_end: ne finit pas par
+      not_end_all: ne finit pas par tous
+      not_end_any: ne finit pas par au moins un
+      not_eq: différent de
+      not_eq_all: différent de tous
+      not_eq_any: différent d'au moins un
+      not_in: non inclus dans
+      not_in_all: non inclus dans tous
+      not_in_any: non inclus dans au moins un
+      not_null: n'est pas null
+      not_start: ne commence pas par
+      not_start_all: ne commence pas par tous
+      not_start_any: ne commence pas par au moins un
+      'null': est null
+      present: est présent
+      start: commence par
+      start_all: commence par tous
+      start_any: commence par au moins un
+      'true': est vrai
+    search: recherche
+    sort: tri
+    value: valeur
+  simple_form:
+    error_notification:
+      default_message: 'Please review the problems below:'
+    'no': 'No'
+    required:
+      mark: "*"
+      text: required
+    'yes': 'Yes'
+  support:
+    array:
+      last_word_connector: ", and "
+      two_words_connector: " and "
+      words_connector: ", "
+  time:
+    am: am
+    formats:
+      default: "%a, %d %b %Y %H:%M:%S %z"
+      long: "%B %d, %Y %H:%M"
+      short: "%d %b %H:%M"
+    pm: pm
+ja:
+  activerecord:
+    attributes:
+      category:
+        name: Name
+      menu_item:
+        category_id: Category
+        category_list: Category list
+        keyword_list: Keyword list
+        name: Name
+    errors:
+      messages:
+        record_invalid: 'Validation failed: %{errors}'
+        restrict_dependent_destroy:
+          many: Cannot delete record because dependent %{record} exist
+          one: Cannot delete record because a dependent %{record} exists
+    models:
+      category: Category
+      menu_item: Menu item
+  date:
+    formats:
+      default: "%Y-%m-%d"
+      long: "%B %d, %Y"
+      short: "%b %d"
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: about 1 hour
+        other: about %{count} hours
+      about_x_months:
+        one: about 1 month
+        other: about %{count} months
+      about_x_years:
+        one: about 1 year
+        other: about %{count} years
+      almost_x_years:
+        one: almost 1 year
+        other: almost %{count} years
+      half_a_minute: half a minute
+      less_than_x_minutes:
+        one: less than a minute
+        other: less than %{count} minutes
+      less_than_x_seconds:
+        one: less than 1 second
+        other: less than %{count} seconds
+      over_x_years:
+        one: over 1 year
+        other: over %{count} years
+      x_days:
+        one: 1 day
+        other: "%{count} days"
+      x_minutes:
+        one: 1 minute
+        other: "%{count} minutes"
+      x_months:
+        one: 1 month
+        other: "%{count} months"
+      x_seconds:
+        one: 1 second
+        other: "%{count} seconds"
+    prompts:
+      day: Day
+      hour: Hour
+      minute: Minute
+      month: Month
+      second: Seconds
+      year: Year
+  errors:
+    format: "%{attribute} %{message}"
+    messages:
+      accepted: must be accepted
+      blank: can't be blank
+      confirmation: doesn't match %{attribute}
+      empty: can't be empty
+      equal_to: must be equal to %{count}
+      even: must be even
+      exclusion: is reserved
+      greater_than: must be greater than %{count}
+      greater_than_or_equal_to: must be greater than or equal to %{count}
+      inclusion: is not included in the list
+      invalid: is invalid
+      less_than: must be less than %{count}
+      less_than_or_equal_to: must be less than or equal to %{count}
+      not_a_number: is not a number
+      not_an_integer: must be an integer
+      odd: must be odd
+      other_than: must be other than %{count}
+      present: must be blank
+      taken: has already been taken
+      too_long: is too long (maximum is %{count} characters)
+      too_short: is too short (minimum is %{count} characters)
+      wrong_length: is the wrong length (should be %{count} characters)
+  hello: Hello world
+  helpers:
+    select:
+      prompt: Please select
+    submit:
+      category:
+        create: Create Category
+        update: Update Category
+      menu_item:
+        create: Create Menu item
+        update: Update Menu item
+      submit: Save %{model}
+      update: Update %{model}
+  number:
+    currency:
+      format:
+        delimiter: ","
+        format: "%u%n"
+        separator: "."
+        unit: "$"
+    format:
+      delimiter: ","
+      separator: "."
+    human:
+      decimal_units:
+        format: "%n %u"
+        units:
+          billion: Billion
+          million: Million
+          quadrillion: Quadrillion
+          thousand: Thousand
+          trillion: Trillion
+      storage_units:
+        format: "%n %u"
+        units:
+          byte:
+            one: Byte
+            other: Bytes
+          gb: GB
+          kb: KB
+          mb: MB
+          tb: TB
+    percentage:
+      format:
+        format: "%n%"
+  ransack:
+    all: all
+    and: and
+    any: any
+    asc: ascending
+    attribute: attribute
+    combinator: combinator
+    condition: condition
+    desc: descending
+    or: or
+    predicate: predicate
+    predicates:
+      blank: is blank
+      cont: contains
+      cont_all: contains all
+      cont_any: contains any
+      does_not_match: doesn't match
+      does_not_match_all: doesn't match all
+      does_not_match_any: doesn't match any
+      end: ends with
+      end_all: ends with all
+      end_any: ends with any
+      eq: equals
+      eq_all: equals all
+      eq_any: equals any
+      'false': is false
+      gt: greater than
+      gt_all: greater than all
+      gt_any: greater than any
+      gteq: greater than or equal to
+      gteq_all: greater than or equal to all
+      gteq_any: greater than or equal to any
+      in: in
+      in_all: in all
+      in_any: in any
+      lt: less than
+      lt_all: less than all
+      lt_any: less than any
+      lteq: less than or equal to
+      lteq_all: less than or equal to all
+      lteq_any: less than or equal to any
+      matches: matches
+      matches_all: matches all
+      matches_any: matches any
+      not_cont: doesn't contain
+      not_cont_all: doesn't contain all
+      not_cont_any: doesn't contain any
+      not_end: doesn't end with
+      not_end_all: doesn't end with all
+      not_end_any: doesn't end with any
+      not_eq: not equal to
+      not_eq_all: not equal to all
+      not_eq_any: not equal to any
+      not_in: not in
+      not_in_all: not in all
+      not_in_any: not in any
+      not_null: is not null
+      not_start: doesn't start with
+      not_start_all: doesn't start with all
+      not_start_any: doesn't start with any
+      'null': is null
+      present: is present
+      start: starts with
+      start_all: starts with all
+      start_any: starts with any
+      'true': is true
+    search: search
+    sort: sort
+    value: value
+  simple_form:
+    error_notification:
+      default_message: 'Please review the problems below:'
+    'no': 'No'
+    required:
+      html: <abbr title="required">*</abbr>
+      mark: "*"
+      text: required
+    'yes': 'Yes'
+  support:
+    array:
+      last_word_connector: ", and "
+      two_words_connector: " and "
+      words_connector: ", "
+  time:
+    am: am
+    formats:
+      default: "%a, %d %b %Y %H:%M:%S %z"
+      long: "%B %d, %Y %H:%M"
+      short: "%d %b %H:%M"
+    pm: pm
