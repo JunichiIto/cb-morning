@@ -1,46 +1,33 @@
 source 'https://rubygems.org'
 
-ruby '2.3.3'
+ruby '2.4.2'
 
-gem 'rails', '4.0.4'
-
-group :doc do
-  gem 'sdoc', require: false
-end
+gem 'rails', '5.1.4'
 
 group :development, :test do
   gem 'sqlite3'
-  gem "rspec-rails", ">= 2.0.1"
-end
-
-group :development do
-  gem 'heroku_san'
-  gem 'heroku'
-  gem 'awesome_print'
+  gem "rspec-rails"
 end
 
 group :test do
   gem "capybara"
 end
 
-group :production do
-  gem 'rails_12factor'
-end
-
-gem 'uglifier', '>= 1.3.0'
-gem 'coffee-rails', '~> 4.0.0'
-gem 'jbuilder', '~> 1.2'
-gem "haml", ">= 3.0.0"
+gem 'listen'
+gem 'uglifier'
+gem 'coffee-rails'
+gem 'jbuilder'
+gem "haml"
 gem "haml-rails"
 gem "jquery-rails"
 gem 'sass-rails'
-gem 'sprockets', '~> 2.11.0'
-gem 'bootstrap-sass', '~> 2.3.2.1'
-gem "simple_form", '~> 3.0.2'
+gem 'sprockets-rails'
+gem 'bootstrap-sass', '~> 2.3'
+gem "simple_form"
 gem 'pg'
-gem 'unicorn'
+gem 'puma'
 gem 'acts-as-taggable-on'
-gem "koala", "~> 1.7.0rc1"
+gem "koala"
 gem 'acts_as_list'
 gem 'yahoo-japanese-analysis'
 gem 'mojinizer', require: 'mojinizer'

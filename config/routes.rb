@@ -1,4 +1,4 @@
-CbMorning::Application.routes.draw do
+Rails.application.routes.draw do
   resources :categories
 
   resources :menu_items
