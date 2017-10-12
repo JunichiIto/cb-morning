@@ -13,20 +13,20 @@ group :test do
   gem "capybara"
 end
 
-gem 'uglifier', '>= 1.3.0'
-gem 'coffee-rails', '~> 4.0.0'
-gem 'jbuilder', '~> 1.2'
-gem "haml", ">= 3.0.0"
+gem 'uglifier'
+gem 'coffee-rails'
+gem 'jbuilder'
+gem "haml"
 gem "haml-rails"
 gem "jquery-rails"
 gem 'sass-rails'
-gem 'sprockets', '~> 2.11.0'
-gem 'bootstrap-sass', '~> 2.3.2.1'
-gem "simple_form", '~> 3.0.2'
+gem 'sprockets-rails'
+gem 'bootstrap-sass', '~> 2.3'
+gem "simple_form"
 gem 'pg'
 gem 'unicorn'
 gem 'acts-as-taggable-on'
-gem "koala", "~> 1.7.0rc1"
+gem "koala"
 gem 'acts_as_list'
 gem 'yahoo-japanese-analysis'
 gem 'mojinizer', require: 'mojinizer'
