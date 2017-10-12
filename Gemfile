@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 ruby '2.3.3'
 
-gem 'rails', '~> 5.0.0'
+gem 'rails', '5.1.4'
 
 group :development, :test do
   gem 'sqlite3'
@@ -13,6 +13,7 @@ group :test do
   gem "capybara"
 end
 
+gem 'listen'
 gem 'uglifier'
 gem 'coffee-rails'
 gem 'jbuilder'
