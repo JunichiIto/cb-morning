@@ -24,7 +24,7 @@ gem 'sprockets-rails'
 gem 'bootstrap-sass', '~> 2.3'
 gem "simple_form"
 gem 'pg'
-gem 'unicorn'
+gem 'puma'
 gem 'acts-as-taggable-on'
 gem "koala"
 gem 'acts_as_list'
