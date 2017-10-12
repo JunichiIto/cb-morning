@@ -1,6 +1,9 @@
 $ ->
   appendHeader = (header)->
-    appendText("\n#{header}")
+    if header.match /菓子パン/
+      appendText(header)
+    else
+      appendText("\n#{header}")
 
   appendText = (text)->
     $textarea = $('#menu-text')
@@ -8,7 +11,6 @@ $ ->
     $('#menu-text').val("#{originalText}#{text}\n")
 
   appendPrice = (text)->
-    console.log text
     textWithPrice = text
     if text.match /菓子パン/
       textWithPrice += '（200円、# は180円）'
