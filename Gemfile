@@ -4,27 +4,13 @@ ruby '2.3.3'
 
 gem 'rails', '4.0.4'
 
-group :doc do
-  gem 'sdoc', require: false
-end
-
 group :development, :test do
   gem 'sqlite3'
-  gem "rspec-rails", ">= 2.0.1"
-end
-
-group :development do
-  gem 'heroku_san'
-  gem 'heroku'
-  gem 'awesome_print'
+  gem "rspec-rails"
 end
 
 group :test do
   gem "capybara"
-end
-
-group :production do
-  gem 'rails_12factor'
 end
 
 gem 'uglifier', '>= 1.3.0'
