@@ -1,3 +1,3 @@
 # Be sure to restart your server when you modify this file.
 
-CbMorning::Application.config.session_store :cookie_store, key: '_cb-morning_session'
+Rails.application.config.session_store :cookie_store, key: '_cb_morning_session'
