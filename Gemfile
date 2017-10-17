@@ -7,13 +7,13 @@ gem 'rails', '5.1.4'
 group :development, :test do
   gem 'sqlite3'
   gem 'rspec-rails'
+  gem 'listen'
 end
 
 group :test do
   gem 'capybara'
 end
 
-gem 'listen'
 gem 'uglifier'
 gem 'coffee-rails'
 gem 'jbuilder'
