@@ -13,7 +13,7 @@ $ ->
   appendPrice = (text)->
     textWithPrice = text
     if text.match /菓子パン/
-      textWithPrice += '（200円、# は180円）'
+      textWithPrice += '（200円）'
     else if text.match /スコーン/
       textWithPrice += '（180円）'
     else if text.match /ベーグル/
@@ -27,7 +27,7 @@ $ ->
     else if text.match /ハードパン/
       textWithPrice += '（350円）'
     else if text.match /カンパーニュ/
-      textWithPrice += '（700円～800円※）'
+      textWithPrice += '（800円※）'
     textWithPrice
 
   $('.menu-items').on 'click', '.menu-item', ->
