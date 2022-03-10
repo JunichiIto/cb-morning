@@ -23,9 +23,9 @@ $ ->
     else if text.match /食パン/
       textWithPrice += '（700円～800円※）'
     else if text.match /バゲット/
-      textWithPrice += '（350円～400円）'
+      textWithPrice += '（350円～500円）'
     else if text.match /ハードパン/
-      textWithPrice += '（350円）'
+      textWithPrice += '（400円）'
     else if text.match /カンパーニュ/
       textWithPrice += '（800円※）'
     textWithPrice
