@@ -10,6 +10,13 @@ class Tag
   validates :name, presence: true
 
   class << self
+    def all
+      records = col.order(:name).get.map do |data|
+        to_instance(data)
+      end
+      records.sort_by { |r| r.name.hiragana }
+    end
+
     def save_tags(names)
       names.each do |name|
         unless find_by(name:)

@@ -21,11 +21,22 @@ class MenuItem
       records.sort_by(&:created_at).reverse
     end
 
+    def tagged_with(name)
+      records = col.where(:keyword_list, :array_contains, name).get.map do |data|
+        to_instance(data)
+      end
+      sort(records)
+    end
+
     # Override
     def find(id)
       record = super
       record.category = Category.find(record.category_id)
       record
+    end
+
+    def sort(records)
+      records.sort_by { |r| r.name.hiragana }
     end
 
     private
