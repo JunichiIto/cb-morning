@@ -36,6 +36,9 @@
               %h3
                 = content_tag :a, tag.name, name: tag.name
               .menu-items.well
-                - MenuItem.tagged_with(tag.name).each do |menu_item|
+                - menu_items = MenuItem.tagged_with(tag.name)
+                - menu_items.each do |menu_item|
                   %span.menu-item.label.label-warning= menu_item.name
                 = link_to 'トップに戻る', '#', class: "label label-info"
+                -# 未使用タグは削除
+                - tag.destroy if menu_items.empty?
