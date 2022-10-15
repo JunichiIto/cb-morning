@@ -4,7 +4,7 @@ class MenuItemsController < ApplicationController
   # GET /menu_items
   # GET /menu_items.json
   def index
-    @menu_items = Category.all.flat_map { |c| MenuItem.with_category(c) }
+    @menu_items = Category.all.flat_map { |c| c.menu_items }
   end
 
   # GET /menu_items/1

@@ -38,6 +38,10 @@ class Category
     end
   end
 
+  def menu_items
+    MenuItem.with_category(self)
+  end
+
   private
 
   # Override

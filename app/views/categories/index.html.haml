@@ -21,7 +21,7 @@
                 - if category.name == '◎菓子パン'
                   Click keyword tab.
                 - else
-                  - category.menu_items.sort{|a, b| a.name.hiragana <=> b.name.hiragana}.each do |menu_item|
+                  - category.menu_items.each do |menu_item|
                     %span.menu-item.label.label-warning= menu_item.name
         #tab2.tab-pane
           %h3 キーワード

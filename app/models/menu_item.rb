@@ -18,7 +18,7 @@ class MenuItem
       records = col.where(:category_id, :==, category.id).get.map do |data|
         to_instance(data).tap { |mi| mi.category = category }
       end
-      records.sort_by(&:created_at).reverse
+      sort(records)
     end
 
     def tagged_with(name)
