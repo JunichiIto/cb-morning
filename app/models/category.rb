@@ -29,10 +29,11 @@ class Category
     def to_instance(data)
       new(
         id: data.document_id,
+        created_at: data.created_at,
+        updated_at: data.updated_at,
+
         name: data[:name],
         position: data[:position],
-        created_at: data.created_at,
-        updated_at: data.updated_at
       )
     end
   end

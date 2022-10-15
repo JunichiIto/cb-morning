@@ -4,8 +4,7 @@ class MenuItemsController < ApplicationController
   # GET /menu_items
   # GET /menu_items.json
   def index
-    @q = MenuItem.joins(:category).order("categories.position, menu_items.id").ransack(params[:q])
-    @menu_items = @q.result
+    @menu_items = Category.all.flat_map { |c| MenuItem.with_category(c) }
   end
 
   # GET /menu_items/1
@@ -70,6 +69,6 @@ class MenuItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def menu_item_params
-      params.require(:menu_item).permit(:name, :keyword_list, :category_id)
+      params.require(:menu_item).permit(:name, :keyword_list_text, :category_id)
     end
 end
