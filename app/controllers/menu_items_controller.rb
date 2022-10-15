@@ -27,7 +27,7 @@ class MenuItemsController < ApplicationController
     @menu_item = MenuItem.new(menu_item_params)
 
     respond_to do |format|
-      if @menu_item.save
+      if @menu_item.save_with_tags
         format.html { redirect_to @menu_item, notice: 'Menu item was successfully created.' }
         format.json { render action: 'show', status: :created, location: @menu_item }
       else
@@ -41,7 +41,7 @@ class MenuItemsController < ApplicationController
   # PATCH/PUT /menu_items/1.json
   def update
     respond_to do |format|
-      if @menu_item.update(menu_item_params)
+      if @menu_item.update_with_tags(menu_item_params)
         format.html { redirect_to @menu_item, notice: 'Menu item was successfully updated.' }
         format.json { head :no_content }
       else

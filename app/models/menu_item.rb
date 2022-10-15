@@ -49,6 +49,24 @@ class MenuItem
     end
   end
 
+  def save_with_tags
+    if save
+      Tag.save_tags(keyword_list)
+      true
+    else
+      false
+    end
+  end
+
+  def update_with_tags(params)
+    if update(params)
+      Tag.save_tags(keyword_list)
+      true
+    else
+      false
+    end
+  end
+
   def keyword_list
     @keyword_list ||= []
   end
