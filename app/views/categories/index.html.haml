@@ -27,8 +27,6 @@
           %h3 キーワード
           - sorted_tags = Tag.all
           .well#tag-cloud
-            -# - tag_cloud(sorted_keywords, %w(tag1 tag2 tag3 tag4)) do |keyword, css_class|
-            -#   = link_to keyword.name, "##{keyword.name}", class: "label label-warning #{css_class}"
             - sorted_tags.each do |tag|
               = link_to tag.name, "##{tag.name}", class: "label label-warning tag2"
           #keywords

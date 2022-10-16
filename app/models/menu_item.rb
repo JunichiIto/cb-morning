@@ -1,30 +1,25 @@
 class MenuItem
-  include FirerecordKakkoKari
+  include FireRecordKakkoKari
 
   attr_accessor :category
 
-  attribute :id, :string
-  attribute :created_at, :time
-  attribute :updated_at, :time
-
   attribute :category_id, :string
   attribute :name, :string
+  firestore_attributes :category_id, :name, :keyword_list
 
   validates :category_id, presence: true
   validates :name, presence: true
 
   class << self
     def with_category(category)
-      records = col.where(:category_id, :==, category.id).get.map do |data|
-        to_instance(data).tap { |mi| mi.category = category }
+      records = search(where: [:category_id, :==, category.id]) do |record|
+        record.category = category
       end
       sort(records)
     end
 
     def tagged_with(name)
-      records = col.where(:keyword_list, :array_contains, name).get.map do |data|
-        to_instance(data)
-      end
+      records = search(where: [:keyword_list, :array_contains, name])
       sort(records)
     end
 
@@ -37,26 +32,6 @@ class MenuItem
 
     def sort(records)
       records.sort_by { |r| r.name.hiragana }
-    end
-
-    private
-
-    # Override
-    def collection_name
-      'menu_item'.freeze
-    end
-
-    # Override
-    def to_instance(data)
-      new(
-        id: data.document_id,
-        created_at: data.created_at,
-        updated_at: data.updated_at,
-
-        category_id: data[:category_id],
-        name: data[:name],
-        keyword_list: data[:keyword_list],
-      )
     end
   end
 
@@ -96,16 +71,5 @@ class MenuItem
     keywords.each do |keyword|
       keyword_list << keyword
     end
-  end
-
-  private
-
-  # Override
-  def save_params
-    {
-      name:,
-      category_id:,
-      keyword_list:,
-    }
   end
 end
