@@ -8,6 +8,7 @@ Category.destroy_all
 Tag.destroy_all
 
 # カテゴリを登録
+puts "Save categories..."
 categories = {}
 position = 1
 CSV.foreach(csv_path, headers: true) do |row|
@@ -21,14 +22,25 @@ CSV.foreach(csv_path, headers: true) do |row|
 end
 
 # MenuItemを登録
+puts "Save menu_items..."
 CSV.foreach(csv_path, headers: true) do |row|
   category_name = row['category_name']
   category = categories[category_name]
   category_id = category.id
   name = row['menu_item_name']
   keyword_list_text = row['tag_name']
-  unless categories[name]
-    menu_item = MenuItem.new(name: , keyword_list_text: , category_id: )
-    menu_item.save_with_tags
-  end
+  menu_item = MenuItem.new(name: , keyword_list_text: , category_id: )
+  menu_item.save!
+end
+
+# Tagを登録
+puts "Save tags..."
+keywords = []
+CSV.foreach(csv_path, headers: true) do |row|
+  keyword_list_text = row['tag_name']
+  menu_item = MenuItem.new(keyword_list_text: )
+  keywords += menu_item.keyword_list
+end
+keywords.uniq.sort_by { |r| r.hiragana }.each do |name|
+  Tag.new(name: ).save!
 end
