@@ -22,16 +22,16 @@ gem 'simple_form'
 gem 'pg'
 gem 'acts-as-taggable-on'
 gem 'koala'
-gem 'acts_as_list'
 gem 'yahoo-japanese-analysis'
 gem 'mojinizer', require: 'mojinizer'
-gem 'ransack'
 gem 'newrelic_rpm'
 gem 'rexml'
+gem 'fire_record_kakko_kari'
 
 group :development, :test do
   gem 'sqlite3'
   gem 'rspec-rails'
+  gem 'dotenv-rails'
 end
 
 group :development do

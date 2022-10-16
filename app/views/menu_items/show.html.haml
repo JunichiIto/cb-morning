@@ -7,8 +7,8 @@
   %b Category
   = @menu_item.category.name
 %p
-  %b= "#{lbl @menu_item, :keyword_list}:"
-  = @menu_item.keyword_list
+  %b= "#{lbl @menu_item, :keyword_list_text}:"
+  = @menu_item.keyword_list_text
 
 = link_to 'Edit', edit_menu_item_path(@menu_item)
 \|

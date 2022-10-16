@@ -21,20 +21,22 @@
                 - if category.name == '◎菓子パン'
                   Click keyword tab.
                 - else
-                  - category.menu_items.sort{|a, b| a.name.hiragana <=> b.name.hiragana}.each do |menu_item|
+                  - category.menu_items.each do |menu_item|
                     %span.menu-item.label.label-warning= menu_item.name
         #tab2.tab-pane
           %h3 キーワード
-          - keywords = MenuItem.tag_counts_on(:keywords)
-          - sorted_keywords = keywords.sort{|a, b| a.name.hiragana <=> b.name.hiragana}
+          - sorted_tags = Tag.all
           .well#tag-cloud
-            - tag_cloud(sorted_keywords, %w(tag1 tag2 tag3 tag4)) do |keyword, css_class|
-              = link_to keyword.name, "##{keyword.name}", class: "label label-warning #{css_class}"
+            - sorted_tags.each do |tag|
+              = link_to tag.name, "##{tag.name}", class: "label label-warning tag2"
           #keywords
-            - sorted_keywords.each do |keyword|
+            - sorted_tags.each do |tag|
               %h3
-                = content_tag :a, keyword.name, name: keyword.name
+                = content_tag :a, tag.name, name: tag.name
               .menu-items.well
-                - MenuItem.tagged_with(keyword.name, on: :keywords).each do |menu_item|
+                - menu_items = MenuItem.tagged_with(tag.name)
+                - menu_items.each do |menu_item|
                   %span.menu-item.label.label-warning= menu_item.name
                 = link_to 'トップに戻る', '#', class: "label label-info"
+                -# 未使用タグは削除
+                - tag.destroy if menu_items.empty?

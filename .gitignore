@@ -16,3 +16,7 @@
 /tmp
 
 /config/heroku.yml
+
+doc/certs/*.json
+doc/seeds/*.csv
+.env

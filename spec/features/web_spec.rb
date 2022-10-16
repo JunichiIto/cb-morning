@@ -1,12 +1,19 @@
 require 'spec_helper'
 
 feature "web" do
+  before do
+    MenuItem.destroy_all
+    Category.destroy_all
+    Tag.destroy_all
+  end
+
   scenario "save and view" do
     visit root_path
     expect(page).to have_content "CB Morning"
 
     click_link "New Category"
     fill_in "Name", with: "菓子パン"
+    fill_in "Position", with: 1
     click_button "Create Category"
     expect(page).to have_content "Category Was Successfully Created"
 

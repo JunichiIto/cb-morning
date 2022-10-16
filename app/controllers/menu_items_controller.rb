@@ -4,8 +4,7 @@ class MenuItemsController < ApplicationController
   # GET /menu_items
   # GET /menu_items.json
   def index
-    @q = MenuItem.joins(:category).order("categories.position, menu_items.id").ransack(params[:q])
-    @menu_items = @q.result
+    @menu_items = Category.all.flat_map { |c| c.menu_items }
   end
 
   # GET /menu_items/1
@@ -28,7 +27,7 @@ class MenuItemsController < ApplicationController
     @menu_item = MenuItem.new(menu_item_params)
 
     respond_to do |format|
-      if @menu_item.save
+      if @menu_item.save_with_tags
         format.html { redirect_to @menu_item, notice: 'Menu item was successfully created.' }
         format.json { render action: 'show', status: :created, location: @menu_item }
       else
@@ -42,7 +41,7 @@ class MenuItemsController < ApplicationController
   # PATCH/PUT /menu_items/1.json
   def update
     respond_to do |format|
-      if @menu_item.update(menu_item_params)
+      if @menu_item.update_with_tags(menu_item_params)
         format.html { redirect_to @menu_item, notice: 'Menu item was successfully updated.' }
         format.json { head :no_content }
       else
@@ -70,6 +69,6 @@ class MenuItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def menu_item_params
-      params.require(:menu_item).permit(:name, :keyword_list, :category_id)
+      params.require(:menu_item).permit(:name, :keyword_list_text, :category_id)
     end
 end
