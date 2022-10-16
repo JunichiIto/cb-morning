@@ -16,8 +16,7 @@ class Tag
     def save_tags(names)
       names.each do |name|
         unless find_by(name:)
-          record = new(name:)
-          record.save!
+          create!(name: )
         end
       end
     end

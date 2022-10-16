@@ -111,7 +111,7 @@ GEM
     faraday-retry (2.0.0)
       faraday (~> 2.0)
     ffi (1.15.5)
-    fire_record_kakko_kari (0.0.1)
+    fire_record_kakko_kari (0.0.3)
       google-cloud-firestore
       rails
     gapic-common (0.12.0)

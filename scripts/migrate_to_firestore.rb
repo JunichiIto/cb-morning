@@ -14,8 +14,7 @@ position = 1
 CSV.foreach(csv_path, headers: true) do |row|
   name = row['category_name']
   unless categories[name]
-    category = Category.new(name: , position: )
-    category.save!
+    category = Category.create!(name: , position: )
     categories[name] = category
     position += 1
   end
@@ -29,8 +28,7 @@ CSV.foreach(csv_path, headers: true) do |row|
   category_id = category.id
   name = row['menu_item_name']
   keyword_list_text = row['tag_name']
-  menu_item = MenuItem.new(name: , keyword_list_text: , category_id: )
-  menu_item.save!
+  MenuItem.create!(name: , keyword_list_text: , category_id: )
 end
 
 # Tagを登録
@@ -42,5 +40,5 @@ CSV.foreach(csv_path, headers: true) do |row|
   keywords += menu_item.keyword_list
 end
 keywords.uniq.sort_by { |r| r.hiragana }.each do |name|
-  Tag.new(name: ).save!
+  Tag.create!(name: )
 end
