@@ -11,7 +11,7 @@ class Category
   class << self
     # Override
     def all
-      order(:position).find_many
+      order(:position).get_records
     end
   end
 

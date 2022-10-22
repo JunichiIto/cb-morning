@@ -12,14 +12,15 @@ class MenuItem
 
   class << self
     def with_category(category)
-      records = where(:category_id, :==, category.id).find_many do |record|
+      records = where(:category_id, :==, category.id).get_records.map do |record|
         record.category = category
+        record
       end
       sort(records)
     end
 
     def tagged_with(name)
-      records = where(:keyword_list, :array_contains, name).find_many
+      records = where(:keyword_list, :array_contains, name).get_records
       sort(records)
     end
 

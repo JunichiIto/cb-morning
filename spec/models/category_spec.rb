@@ -8,46 +8,33 @@ RSpec.describe Category, type: :model do
     @category_2 = Category.create!(name: 'バゲット', position: 2)
   end
 
-  example 'find_one' do
-    category = Category.where(:name, :==, '菓子パン').find_one
-    expect(category.name).to eq '菓子パン'
-
-    category = Category.where(:name, :==, 'バゲット').find_one
-    expect(category.name).to eq 'バゲット'
-
-    category = Category.where(:name, :==, 'カンパーニュ').find_one
-    expect(category).to be_nil
-
-    query = Category.where(:name, :==, '菓子パン')
-    category = query.find_one
-    expect(category.name).to eq '菓子パン'
-
-    category = query.where(:position, :==, 1).find_one
-    expect(category.name).to eq '菓子パン'
-
-    category = query.where(:position, :==, 2).find_one
-    expect(category).to be_nil
-  end
-
-  example 'find_one!' do
-    category = Category.where(:name, :==, '菓子パン').find_one!
-    expect(category.name).to eq '菓子パン'
-
-    expect { Category.where(:name, :==, 'カンパーニュ').find_one! }.to raise_error(ActiveRecord::RecordNotFound)
-  end
-
-  example 'find_many' do
-    categories = Category.where(:position, :>=, 1).find_many
+  example 'get_records' do
+    categories = Category.where(:position, :>=, 1).get_records
     expect(categories.map(&:name)).to contain_exactly('菓子パン', 'バゲット')
 
-    categories = Category.where(:position, :>=, 2).find_many
+    categories = Category.where(:position, :>=, 2).get_records
     expect(categories.map(&:name)).to contain_exactly('バゲット')
 
-    categories = Category.where(:position, :>=, 3).find_many
+    categories = Category.where(:position, :>=, 3).get_records
     expect(categories).to be_empty
 
-    categories = Category.where(:position, :==, 2).where(:name, :==, 'バゲット').find_many
+    categories = Category.where(:position, :==, 2).where(:name, :==, 'バゲット').get_records
     expect(categories.map(&:name)).to contain_exactly('バゲット')
+  end
+
+  example 'find_by' do
+    category = Category.find_by(name: '菓子パン')
+    expect(category.name).to eq '菓子パン'
+
+    category = Category.find_by(name: 'ハードパン')
+    expect(category).to be_nil
+  end
+
+  example 'find_by!' do
+    category = Category.find_by!(name: '菓子パン')
+    expect(category.name).to eq '菓子パン'
+
+    expect { Category.find_by!(name: 'ハードパン') }.to raise_error(ActiveRecord::RecordNotFound)
   end
 
   describe 'destroy_all' do
@@ -69,22 +56,22 @@ RSpec.describe Category, type: :model do
   describe 'order' do
     context 'without where' do
       example do
-        categories = Category.order(:position).find_many
+        categories = Category.order(:position).get_records
         expect(categories.map(&:name)).to eq ['菓子パン', 'バゲット']
 
-        categories = Category.order(:position, :desc).find_many
+        categories = Category.order(:position, :desc).get_records
         expect(categories.map(&:name)).to eq ['バゲット', '菓子パン']
       end
     end
     context 'with where' do
       example do
-        categories = Category.where(:position, :>=, 0).order(:position).find_many
+        categories = Category.where(:position, :>=, 0).order(:position).get_records
         expect(categories.map(&:name)).to eq ['菓子パン', 'バゲット']
 
-        categories = Category.where(:position, :>=, 0).order(:position, :desc).find_many
+        categories = Category.where(:position, :>=, 0).order(:position, :desc).get_records
         expect(categories.map(&:name)).to eq ['バゲット', '菓子パン']
 
-        categories = Category.order(:position).where(:position, :>=, 0).find_many
+        categories = Category.order(:position).where(:position, :>=, 0).get_records
         expect(categories.map(&:name)).to eq ['菓子パン', 'バゲット']
       end
     end
@@ -118,6 +105,28 @@ RSpec.describe Category, type: :model do
 
         categories = Category.order(:position, :desc).first(2)
         expect(categories.map(&:name)).to eq ['バゲット', '菓子パン']
+      end
+    end
+    context 'with where' do
+      example do
+        category = Category.where(:name, :==, '菓子パン').first
+        expect(category.name).to eq '菓子パン'
+
+        category = Category.where(:name, :==, 'バゲット').first
+        expect(category.name).to eq 'バゲット'
+
+        category = Category.where(:name, :==, 'カンパーニュ').first
+        expect(category).to be_nil
+
+        query = Category.where(:name, :==, '菓子パン')
+        category = query.first
+        expect(category.name).to eq '菓子パン'
+
+        category = query.where(:position, :==, 1).first
+        expect(category.name).to eq '菓子パン'
+
+        category = query.where(:position, :==, 2).first
+        expect(category).to be_nil
       end
     end
   end
