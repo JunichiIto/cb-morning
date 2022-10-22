@@ -1,5 +1,5 @@
 class MenuItem
-  include FireRecordKakkoKari
+  include ActAsFireRecordBeta
 
   attr_accessor :category
 
@@ -12,14 +12,14 @@ class MenuItem
 
   class << self
     def with_category(category)
-      records = search(where: [:category_id, :==, category.id]) do |record|
+      records = where(:category_id, :==, category.id).find_many do |record|
         record.category = category
       end
       sort(records)
     end
 
     def tagged_with(name)
-      records = search(where: [:keyword_list, :array_contains, name])
+      records = where(:keyword_list, :array_contains, name).find_many
       sort(records)
     end
 

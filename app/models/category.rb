@@ -1,5 +1,5 @@
 class Category
-  include FireRecordKakkoKari
+  include ActAsFireRecordBeta
 
   attribute :name, :string
   attribute :position, :integer
@@ -11,11 +11,16 @@ class Category
   class << self
     # Override
     def all
-      super(order: :position)
+      order(:position).find_many
     end
   end
 
   def menu_items
     MenuItem.with_category(self)
+  end
+
+  def destroy_with_menu_items
+    destroy
+    MenuItem.where(:category_id, :==, id).destroy_all
   end
 end

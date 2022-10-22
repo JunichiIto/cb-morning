@@ -1,5 +1,5 @@
 class Tag
-  include FireRecordKakkoKari
+  include ActAsFireRecordBeta
 
   attribute :name, :string
   firestore_attributes :name
@@ -8,7 +8,7 @@ class Tag
 
   class << self
     # Override
-    def all(...)
+    def all
       records = super
       records.sort_by { |r| r.name.hiragana }
     end

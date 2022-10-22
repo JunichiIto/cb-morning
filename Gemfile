@@ -26,7 +26,7 @@ gem 'yahoo-japanese-analysis'
 gem 'mojinizer', require: 'mojinizer'
 gem 'newrelic_rpm'
 gem 'rexml'
-gem 'fire_record_kakko_kari'
+gem 'act_as_fire_record_beta'
 
 group :development, :test do
   gem 'sqlite3'
