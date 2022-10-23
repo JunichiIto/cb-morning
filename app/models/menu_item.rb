@@ -3,9 +3,9 @@ class MenuItem
 
   attr_accessor :category
 
-  attribute :category_id, :string
-  attribute :name, :string
-  firestore_attributes :category_id, :name, :keyword_list
+  firestore_attribute :category_id, :string
+  firestore_attribute :name, :string
+  firestore_attribute :keyword_list
 
   validates :category_id, presence: true
   validates :name, presence: true

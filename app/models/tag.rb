@@ -1,8 +1,7 @@
 class Tag
   include ActAsFireRecordBeta
 
-  attribute :name, :string
-  firestore_attributes :name
+  firestore_attribute :name, :string
 
   validates :name, presence: true
 

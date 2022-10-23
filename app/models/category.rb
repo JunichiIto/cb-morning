@@ -1,9 +1,8 @@
 class Category
   include ActAsFireRecordBeta
 
-  attribute :name, :string
-  attribute :position, :integer
-  firestore_attributes :name, :position
+  firestore_attribute :name, :string
+  firestore_attribute :position, :integer
 
   validates :name, presence: true
   validates :position, presence: true
