@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'rails_helper'
 
 RSpec.describe Category, type: :model do
   before do
@@ -34,7 +34,7 @@ RSpec.describe Category, type: :model do
     category = Category.find_by!(name: '菓子パン')
     expect(category.name).to eq '菓子パン'
 
-    expect { Category.find_by!(name: 'ハードパン') }.to raise_error(ActiveRecord::RecordNotFound)
+    expect { Category.find_by!(name: 'ハードパン') }.to raise_error(ActAsFireRecordBeta::RecordNotFound)
   end
 
   describe 'destroy_all' do

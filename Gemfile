@@ -19,8 +19,6 @@ gem 'jquery-rails'
 gem 'sprockets-rails'
 gem 'bootstrap-sass', '~> 2.3'
 gem 'simple_form'
-gem 'pg'
-gem 'acts-as-taggable-on'
 gem 'koala'
 gem 'yahoo-japanese-analysis'
 gem 'mojinizer', require: 'mojinizer'
@@ -29,7 +27,6 @@ gem 'rexml'
 gem 'act_as_fire_record_beta'
 
 group :development, :test do
-  gem 'sqlite3'
   gem 'rspec-rails'
   gem 'dotenv-rails'
 end
