@@ -8,8 +8,7 @@ class Tag
   class << self
     # Override
     def all
-      records = super
-      records.sort_by { |r| r.name.hiragana }
+      super.get_records.sort_by { |r| r.name.hiragana }
     end
 
     def save_tags(names)

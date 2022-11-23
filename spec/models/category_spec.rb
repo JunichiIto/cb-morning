@@ -141,7 +141,7 @@ RSpec.describe Category, type: :model do
     example do
       @category_1.destroy_with_menu_items
       expect(Category.all.map(&:name)).to eq ['バゲット']
-      expect(MenuItem.all.map(&:name)).to eq ['メロンぱん']
+      expect(MenuItem.all.get_records.map(&:name)).to eq ['メロンぱん']
     end
   end
 end
