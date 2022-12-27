@@ -9,16 +9,16 @@ RSpec.describe Category, type: :model do
   end
 
   example 'get_records' do
-    categories = Category.where(:position, :>=, 1).get_records
+    categories = Category.where(:position, :>=, 1)
     expect(categories.map(&:name)).to contain_exactly('菓子パン', 'バゲット')
 
-    categories = Category.where(:position, :>=, 2).get_records
+    categories = Category.where(:position, :>=, 2)
     expect(categories.map(&:name)).to contain_exactly('バゲット')
 
-    categories = Category.where(:position, :>=, 3).get_records
+    categories = Category.where(:position, :>=, 3)
     expect(categories).to be_empty
 
-    categories = Category.where(:position, :==, 2).where(:name, :==, 'バゲット').get_records
+    categories = Category.where(:position, :==, 2).where(:name, :==, 'バゲット')
     expect(categories.map(&:name)).to contain_exactly('バゲット')
   end
 
@@ -56,22 +56,22 @@ RSpec.describe Category, type: :model do
   describe 'order' do
     context 'without where' do
       example do
-        categories = Category.order(:position).get_records
+        categories = Category.order(:position)
         expect(categories.map(&:name)).to eq ['菓子パン', 'バゲット']
 
-        categories = Category.order(:position, :desc).get_records
+        categories = Category.order(:position, :desc)
         expect(categories.map(&:name)).to eq ['バゲット', '菓子パン']
       end
     end
     context 'with where' do
       example do
-        categories = Category.where(:position, :>=, 0).order(:position).get_records
+        categories = Category.where(:position, :>=, 0).order(:position)
         expect(categories.map(&:name)).to eq ['菓子パン', 'バゲット']
 
-        categories = Category.where(:position, :>=, 0).order(:position, :desc).get_records
+        categories = Category.where(:position, :>=, 0).order(:position, :desc)
         expect(categories.map(&:name)).to eq ['バゲット', '菓子パン']
 
-        categories = Category.order(:position).where(:position, :>=, 0).get_records
+        categories = Category.order(:position).where(:position, :>=, 0)
         expect(categories.map(&:name)).to eq ['菓子パン', 'バゲット']
       end
     end
@@ -141,7 +141,7 @@ RSpec.describe Category, type: :model do
     example do
       @category_1.destroy_with_menu_items
       expect(Category.all.map(&:name)).to eq ['バゲット']
-      expect(MenuItem.all.get_records.map(&:name)).to eq ['メロンぱん']
+      expect(MenuItem.all.map(&:name)).to eq ['メロンぱん']
     end
   end
 end

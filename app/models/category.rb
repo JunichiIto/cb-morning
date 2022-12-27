@@ -10,7 +10,7 @@ class Category
   class << self
     # Override
     def all
-      order(:position).get_records
+      order(:position)
     end
   end
 

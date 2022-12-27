@@ -12,7 +12,7 @@ class MenuItem
 
   class << self
     def with_category(category)
-      records = where(:category_id, :==, category.id).get_records.map do |record|
+      records = where(:category_id, :==, category.id).map do |record|
         record.category = category
         record
       end
@@ -20,7 +20,7 @@ class MenuItem
     end
 
     def tagged_with(name)
-      records = where(:keyword_list, :array_contains, name).get_records
+      records = where(:keyword_list, :array_contains, name)
       sort(records)
     end
 

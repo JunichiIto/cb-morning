@@ -22,6 +22,8 @@ doc/seeds/*.csv
 .env
 
 # Firebase emulator ============
+firebase-local
+
 # Logs
 logs
 *.log
