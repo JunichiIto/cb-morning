@@ -13,11 +13,11 @@ $ ->
   appendPrice = (text)->
     textWithPrice = text
     if text.match /菓子パン/
-      textWithPrice += '（200円）'
+      textWithPrice += '（250円）'
     else if text.match /スコーン/
       textWithPrice += '（180円）'
     else if text.match /ベーグル/
-      textWithPrice += '（200円）'
+      textWithPrice += '（250円）'
     else if text.match /フォカッチャ/
       textWithPrice += '（800円※）'
     else if text.match /食パン/
